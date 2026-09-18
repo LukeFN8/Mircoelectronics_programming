@@ -1,0 +1,115 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/10/2026  14:17:03  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\test1.obj TO .\Objects\F380 PRINT (.\Listings\F380.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\test1.obj (TEST1)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\F380 (TEST1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     000CH     UNIT         ?C_C51STARTUP
+            CODE    000FH     0009H     UNIT         ?PR?INIT_DEVICE?TEST1
+            CODE    0018H     0008H     UNIT         ?PR?MAIN?TEST1
+            CODE    0020H     0007H     UNIT         ?PR?PCA_INIT?TEST1
+            CODE    0027H     0007H     UNIT         ?PR?PORT_IO_INIT?TEST1
+            CODE    002EH     0007H     UNIT         ?PR?OSCILLATOR_INIT?TEST1
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\F380 (TEST1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TEST1
+
+?PR?MAIN?TEST1
+  +--> ?PR?INIT_DEVICE?TEST1
+
+?PR?INIT_DEVICE?TEST1
+  +--> ?PR?PCA_INIT?TEST1
+  +--> ?PR?PORT_IO_INIT?TEST1
+  +--> ?PR?OSCILLATOR_INIT?TEST1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\F380 (TEST1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TEST1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/10/2026  14:17:03  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A4H         PUBLIC        P0MDOUT
+  C:0027H         PUBLIC        Port_IO_Init
+  D:00D9H         PUBLIC        PCA0MD
+  C:002EH         PUBLIC        Oscillator_Init
+  D:00E2H         PUBLIC        XBR1
+  C:0018H         PUBLIC        main
+  D:00A9H         PUBLIC        CLKSEL
+  C:000FH         PUBLIC        Init_Device
+  C:0020H         PUBLIC        PCA_Init
+  D:00B6H         PUBLIC        FLSCL
+  -------         PROC          PCA_INIT
+  C:0020H         LINE#         10
+  C:0020H         LINE#         11
+  C:0020H         LINE#         12
+  C:0023H         LINE#         13
+  C:0026H         LINE#         14
+  -------         ENDPROC       PCA_INIT
+  -------         PROC          PORT_IO_INIT
+  C:0027H         LINE#         16
+  C:0027H         LINE#         17
+  C:0027H         LINE#         54
+  C:002AH         LINE#         55
+  C:002DH         LINE#         56
+  -------         ENDPROC       PORT_IO_INIT
+  -------         PROC          OSCILLATOR_INIT
+  C:002EH         LINE#         58
+  C:002EH         LINE#         59
+  C:002EH         LINE#         60
+  C:0031H         LINE#         61
+  C:0034H         LINE#         62
+  -------         ENDPROC       OSCILLATOR_INIT
+  -------         PROC          INIT_DEVICE
+  C:000FH         LINE#         66
+  C:000FH         LINE#         67
+  C:000FH         LINE#         68
+  C:0012H         LINE#         69
+  C:0015H         LINE#         70
+  -------         ENDPROC       INIT_DEVICE
+  -------         PROC          MAIN
+  C:0018H         LINE#         76
+  C:0018H         LINE#         77
+  C:001BH         LINE#         78
+  C:001BH         LINE#         79
+  C:001EH         LINE#         81
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TEST1
+
+Program Size: data=9.0 xdata=0 code=53
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
